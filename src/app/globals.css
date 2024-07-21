@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.custom-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #a1a1b0;
+    border-radius: 4px;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+
+.custom-checkbox:checked {
+    background-color: #68d7c5;
+    border-color: #68d7c5;
+}
+
+.custom-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 10px;
+    height: 6px;
+    border-left: 2px solid #1c0f5e;
+    border-bottom: 2px solid #1c0f5e;
+    transform: translate(-50%, -50%) rotate(315deg);
+}
+
+.blue-glassmorphism{
+    background: rgb(39, 51, 89, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
