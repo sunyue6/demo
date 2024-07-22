@@ -2,6 +2,12 @@
 import React, { useState } from 'react';
 import { HiMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
+interface NavItemProps {
+  name: string;
+  id: string;
+  isActive: boolean;
+  onClick: () => void;
+}
 
 const navItems = [
   { name: 'Overview', id: 'overview' },
@@ -10,11 +16,10 @@ const navItems = [
   { name: 'Feedback', id: 'feedback' }
 ];
 
-const NavItem = ({ name, id, isActive, onClick }) => (
+const NavItem: React.FC<NavItemProps> = ({ name, id, isActive, onClick }) => (
     <li
-        href="#"
         onClick={onClick}
-        className={`block px-4 py-2 text-white ${isActive ? 'text-[#6a5eae]' : 'hover:text-[#5b4da5]'}`}
+        className={`block px-4 py-2 text-white cursor-pointer ${isActive ? 'text-[#5b4da5]' : 'hover:text-[#5b4da5]'}`}
     >
       {name}
     </li>
@@ -65,7 +70,6 @@ export default function Home() {
                           id={item.id}
                           isActive={activeLink === item.id}
                           onClick={() => handleLinkClick(item.id)}
-                          classprops="my-2 text-lg"
                       />
                   ))}
                   <li className="mt-8 px-7 py-2 mx-4 bg-[#e93a7d] rounded-full cursor-pointer hover:opacity-90">Purchase</li>
